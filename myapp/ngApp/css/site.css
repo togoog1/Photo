@@ -1,0 +1,61 @@
+input {
+  border:1px solid #021a40;
+}
+
+a {
+  border:1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: black;
+}
+
+p {
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+
+select {
+  border:1px solid black;
+}
+
+label {
+  padding-top: 5px;
+
+}
+h1 {
+  padding:1px;
+  border:1px solid black;
+  background-color: #5F9EA0;
+}
+
+img {
+    width: 400px;
+    padding:1px;
+    border:3px solid black;
+}
+
+.highlight {
+    background-color: black;
+}
+
+body {
+    background-color: FFFFFF;
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+
+}
+
+
+.body-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}

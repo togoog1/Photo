@@ -1,0 +1,17 @@
+<h1>Add Photo</h1>
+
+<input type="text" placeholder="title" ng-model="vm.photo.title">
+<input type="text" placeholder="description" ng-model="vm.photo.description">
+
+
+
+
+
+
+    <button ng-click="vm.pickFile()">Upload Photo</button>
+
+
+    <img ng-src="{{vm.file.url | fpConvert:{w: 200} }}" alt="{{vm.file.filename}}" />
+
+
+<button type="button" ng-click="vm.addPhoto()">Finalize</button>

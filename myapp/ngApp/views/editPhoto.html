@@ -1,0 +1,22 @@
+<h1>Edit Photo</h1>
+
+<input type="text" placeholder=" new title" ng-model="vm.photo.title">
+<input type="text" placeholder="new description" ng-model="vm.photo.description">
+
+<button type="button" ng-click="vm.editPhoto()">Edit Photo</button>
+
+
+
+
+
+
+
+
+
+    <button ng-click="vm.pickFile()">Upload Photo</button>
+
+
+    <img ng-src="{{vm.file.url | fpConvert:{w: 200} }}" alt="{{vm.file.filename}}" />
+
+
+<button type="button" ng-click="vm.editPhoto()" this.$state.go('/')>Finalize</button>
