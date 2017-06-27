@@ -7,12 +7,13 @@ namespace myapp.Controllers {
 
         public deletephoto(id) {
           this.photoService.removePhoto(id);
+          this.$state.go('home');
         }
 
 
 
         constructor(
-          private photoService,
+          private photoService, private $state
         ){
           this.photos = photoService.getPhotos();
         //  this.files = fileService.getFiles();
@@ -26,13 +27,12 @@ namespace myapp.Controllers {
         public photo;
         public file;
 
-        public addPhoto($state, $scope) {
+        public addPhoto($state) {
 
           this.photo.url =this.file.url
           this.photoService.savePhoto(this.photo);
-         this.$scope.changeState = function () {
-         this.$state.go('home');
-};
+          this.$state.go('home');
+
     }
 
         public pickFile() {
@@ -49,7 +49,7 @@ namespace myapp.Controllers {
             console.log(this.file.url);
         }
         constructor(
-          private photoService, private filepickerService, private $scope: ng.IScope, public $state
+          private photoService, private filepickerService, private $scope: ng.IScope, private $state
         ) {
 
 
@@ -66,11 +66,12 @@ namespace myapp.Controllers {
         public id;
         public file;
 
-        public editPhoto(){
+        public editPhoto($state){$state
 
           this.photo._id = this.id;
           this.photo.url = this.file.url
           this.photoService.savePhoto(this.photo);
+          this.$state.go('home');
 
         }
 //file
@@ -85,10 +86,10 @@ namespace myapp.Controllers {
             // save file url to database
             this.file = file;
             this.$scope.$apply(); // force page to update
-            console.log(this.file.url);
+
         }
         //file
-        constructor(public $stateParams, private photoService, private filepickerService, private $scope: ng.IScope){
+        constructor(public $stateParams, private photoService, private filepickerService, private $scope: ng.IScope, public $state){
           this.id= $stateParams['id'];
         }
     }
